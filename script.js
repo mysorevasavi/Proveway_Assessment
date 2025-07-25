@@ -1,21 +1,12 @@
-const options = document.querySelectorAll('.option');
-const totalDiv = document.getElementById('total');
+const options = document.querySelectorAll('.option'); const total = document.getElementById('totalPrice');
 
-options.forEach(option => {
-  option.addEventListener('click', () => {
-    options.forEach(opt => opt.classList.remove('selected'));
-    option.classList.add('selected');
-    updateTotal();
-  });
-});
+function selectOption(n) { options.forEach(opt => opt.classList.remove('selected')); options[n - 1].classList.add('selected');
 
-function updateTotal() {
-  const selected = document.querySelector('.option.selected');
-  if (!selected) return;
+let price; if (n === 1) price = 1800; else if (n === 2) price = 3200; else if (n === 3) price = 4200;
 
-  const percentage = parseInt(selected.dataset.discount);
-  const original = parseFloat(selected.dataset.original);
-  const discounted = original - (original * percentage / 100);
+total.textContent = ₹${price}; }
 
-  totalDiv.innerHTML = `You pay: <strong>₹${discounted.toFixed(2)}</strong> <del>₹${original.toFixed(2)}</del>`;
-}
+function addToCart() { alert("Item added to cart!"); }
+
+window.onload = () => selectOption(2);
+
