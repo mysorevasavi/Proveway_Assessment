@@ -2,32 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discount Options</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOGO Offer UI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Choose Your Offer</h1>
 
-    <div class="option red" data-discount="20" data-original="999">
-      <div class="badge">20% OFF</div>
-      <div class="price">₹799 <del>₹999</del></div>
+  <div class="card">
+    <h2>YAY! It's BOGO</h2>
+
+    <!-- Option 1 -->
+    <div class="option" onclick="selectOption(1)">
+      <div>1 Unit <span class="tag red">10% Off</span></div>
+      <div>₹1800.00 <del>₹2000.00</del></div>
+      <div class="dropdowns">
+        <label>Size
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+      </div>
     </div>
 
-    <div class="option orange" data-discount="30" data-original="1499">
-      <div class="badge">30% OFF</div>
-      <div class="price">₹1049 <del>₹1499</del></div>
+    <!-- Option 2 -->
+    <div class="option" onclick="selectOption(2)">
+      <div class="badge">MOST POPULAR</div>
+      <div>2 Units <span class="tag orange">20% Off</span></div>
+      <div class="dropdowns">
+        <label>#1
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+        <label>#2
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+      </div>
+      <div>₹3200.00 <del>₹4000.00</del></div>
     </div>
 
-    <div class="option green" data-discount="40" data-original="1999">
-      <div class="badge">40% OFF</div>
-      <div class="price">₹1199 <del>₹1999</del></div>
+    <!-- Option 3 -->
+    <div class="option" onclick="selectOption(3)">
+      <div>3 Units <span class="tag green">30% Off</span></div>
+      <div class="dropdowns">
+        <label>#1
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+        <label>#2
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+        <label>#3
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Black</option><option>White</option></select>
+        </label>
+      </div>
+      <div>₹4200.00 <del>₹6000.00</del></div>
     </div>
 
-    <div class="total" id="total">Select an option to see final price</div>
+    <div class="footer">
+      <p>Free Delivery</p>
+      <p>Total : <strong id="totalPrice">₹3200.00</strong></p>
+    </div>
+
+    <button onclick="addToCart()">+ Add to Cart</button>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html>
+                                                        </html>
